@@ -46,19 +46,6 @@ while True:
             pygame.quit()
             exit()
         
-        # if event.type == KEYDOWN:
-        #     if event.key == K_a or event.key == K_LEFT:
-        #         x -= 20    
-                
-        #     if event.key == K_d or event.key == K_RIGHT:
-        #         x += 20
-                
-        #     if event.key == K_w or event.key == K_UP:
-        #         y -= 20
-                
-        #     if event.key == K_s or event.key == K_DOWN:
-        #         y += 20
-        
         if pygame.key.get_pressed()[K_a]:
             x_snake -= 20
         if pygame.key.get_pressed()[K_d]:
