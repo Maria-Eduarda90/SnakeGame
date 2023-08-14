@@ -1,4 +1,4 @@
-### clone simples do jogo snake feito com a bliblioteca pygame
+### clone simples do jogo snake feito com a biblioteca pygame
 
 ## Projeto
 <div>
