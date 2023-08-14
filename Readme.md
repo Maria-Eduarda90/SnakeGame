@@ -2,5 +2,5 @@
 
 ## Projeto
 <h1 align="center">
-    <video src='snake.mp4' width=500/>
+    <img alt="snake" title="#snake" src="./snake.gif" />
 </h1>
