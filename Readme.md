@@ -2,5 +2,5 @@
 
 ## Projeto
 <div>
-    <img alt="snake" title="#snake" src="./snake.gif" width="300"/>
+    <img alt="snake" title="#snake" src="./snake.gif" width="500"/>
 </div>
