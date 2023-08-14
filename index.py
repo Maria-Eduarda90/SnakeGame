@@ -33,17 +33,30 @@ clock = pygame.time.Clock()
 
 lista_snake = []
 comprimento_inicial = 5
+morreu = False
 
 def increase_snake(lista_snake):
     for XeY in lista_snake:
        pygame.draw.rect(tela, (0,255,0), (XeY[0], XeY[1], 20, 20))
+       
+def reiniciar_jogo():
+    global pontos, comprimento_inicial, x_snake, y_snake, lista_snake, lista_cabeca, x_maca, y_maca, morreu
+    pontos = 0
+    comprimento_inicial = 5
+    x_snake = int(largura / 2)
+    y_snake = int(altura / 2)
+    lista_snake = []
+    lista_cabeca = []
+    x_maca = randint(40, 600)
+    y_maca = randint(50, 430)
+    morreu = False
 
 while True:
     clock.tick(20)
-    tela.fill((255, 255, 255))
+    tela.fill((0, 0, 0))
     
     mensagem = f'Pontos: {pontos}'
-    texto_formatado = fonte.render(mensagem, True, (0, 0, 0))
+    texto_formatado = fonte.render(mensagem, True, (255, 255, 255))
     
     for event in pygame.event.get():
         
@@ -98,6 +111,36 @@ while True:
     lista_cabeca.append(y_snake)
     
     lista_snake.append(lista_cabeca)
+    
+    if lista_snake.count(lista_cabeca) > 1:
+        font2 = pygame.font.SysFont('Arial', 20, True, True)
+        mensagem = "Game Over! Pressione a tecla R para reicinicar o jogo"
+        texto_formatado = font2.render(mensagem, True, (255, 255, 255))
+        ret_texto = texto_formatado.get_rect()
+        
+        morreu = True
+        while morreu:
+            tela.fill((0, 0, 0))
+            for event in pygame.event.get():
+                if event.type == QUIT:
+                    pygame.quit()
+                    exit()
+                if event.type == KEYDOWN:
+                    if event.key == K_r:
+                        reiniciar_jogo()
+            
+            ret_texto.center = (largura//2, altura//2)
+            tela.blit(texto_formatado, ret_texto)
+            pygame.display.update()
+            
+    if x_snake > largura:
+        x_snake = 0
+    if x_snake < 0:
+        x_snake = largura
+    if y_snake > altura:
+        y_snake = 0
+    if y_snake < 0:
+        y_snake = altura
     
     if len(lista_snake) > comprimento_inicial:
         del lista_snake[0]
