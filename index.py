@@ -58,6 +58,10 @@ while True:
     mensagem = f'Pontos: {pontos}'
     texto_formatado = fonte.render(mensagem, True, (255, 255, 255))
     
+    if pontos > 20:
+        velocidade = 20
+        clock.tick(50)
+    
     for event in pygame.event.get():
         
         if event.type == QUIT:
