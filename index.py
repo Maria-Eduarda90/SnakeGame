@@ -28,7 +28,7 @@ pontos = 0
 fonte = pygame.font.SysFont("Arial", 40, True, True)
 
 tela = pygame.display.set_mode((largura, altura))
-pygame.display.set_caption("Jogo")
+pygame.display.set_caption("Snake game")
 clock = pygame.time.Clock()
 
 lista_snake = []
