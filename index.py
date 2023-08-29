@@ -118,7 +118,7 @@ while True:
     
     if lista_snake.count(lista_cabeca) > 1:
         font2 = pygame.font.SysFont('Arial', 20, True, True)
-        mensagem = "Game Over! Pressione a tecla R para reicinicar o jogo"
+        mensagem = "Game Over! Pressione a tecla R para reiniciar o jogo"
         texto_formatado = font2.render(mensagem, True, (255, 255, 255))
         ret_texto = texto_formatado.get_rect()
         
